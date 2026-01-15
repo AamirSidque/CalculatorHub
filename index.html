@@ -97,6 +97,9 @@
 
 </main>
 
+  <section id="indexLongForm" class="seo-longform"></section>
+
+
 
 <footer class="app-footer">
   <section class="footer-grid">
@@ -130,5 +133,10 @@
 
 
 <script src="assets/js/theme.js"></script>
+  <script type="module">
+  import { indexLongFormContent } from './assets/js/content/index-content.js';
+  document.getElementById('indexLongForm').innerHTML = indexLongFormContent;
+</script>
+
 </body>
 </html>
