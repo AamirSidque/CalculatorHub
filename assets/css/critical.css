@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-header, .app-nav {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.calculator {
+  max-width: 420px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: var(--radius);
+}
