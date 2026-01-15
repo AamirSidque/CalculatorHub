@@ -54,6 +54,23 @@
   </script>
 </head>
 
+  <header class="app-header">
+  <h1>
+    <a href="../index.html">Calculator Suite</a> →
+    Scientific Calculator
+  </h1>
+</header>
+
+<nav class="app-nav">
+  <a href="basic.html">Basic</a>
+  <a href="scientific.html" aria-current="page">Scientific</a>
+  <a href="loan.html">Loan / EMI</a>
+  <a href="unit.html">Unit</a>
+  <a href="percentage.html">Percentage</a>
+  <a href="bmi.html">BMI</a>
+</nav>
+
+
 <body>
 
 <main class="calculator loan" aria-label="Loan EMI Calculator">
@@ -105,14 +122,14 @@
 
 <section id="loanLongForm" class="seo-longform"></section>
 
-<script src="../assets/js/calculators/loan.js"></script>
+<script src="../assets/js/calculators/loan.js" defer></script>
 
-<script type="module">
+<script type="module" defer>
   import { loanCalculatorLongForm } from '../assets/js/content/loan-content.js';
   document.getElementById('loanLongForm').innerHTML = loanCalculatorLongForm;
 </script>
 
-<script src="../assets/js/internal-links.js"></script>
+<script src="../assets/js/internal-links.js" defer></script>
 
 </body>
 </html>
