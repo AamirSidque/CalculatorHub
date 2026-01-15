@@ -80,4 +80,24 @@ Whether you are solving equations, studying mathematics, or performing technical
 calculations, this scientific calculator delivers dependable performance without
 distractions.
 </p>
+<h3>Degree and Radian Mode</h3>
+<p>
+Trigonometric calculations can be performed in either degrees or radians.
+This calculator allows instant switching between modes, matching academic
+and professional standards.
+</p>
+
+<h3>Inverse Trigonometric Functions</h3>
+<p>
+Inverse functions help determine angles from known ratios, a common requirement
+in engineering, physics, and advanced mathematics.
+</p>
+
+<h3>Memory Operations</h3>
+<p>
+Memory keys allow storing intermediate results, enabling complex multi-step
+calculations without writing values manually.
+</p>
+
+
 `;
