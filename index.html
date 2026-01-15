@@ -24,6 +24,32 @@
   <link rel="stylesheet" href="assets/css/dark.css">
 
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Calculator Suite free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all calculators are completely free and work offline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator work without internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, once loaded, the calculators work fully offline."
+      }
+    }
+  ]
+}
+</script>
+
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -137,6 +163,9 @@
   import { indexLongFormContent } from './assets/js/content/index-content.js';
   document.getElementById('indexLongForm').innerHTML = indexLongFormContent;
 </script>
+
+  <script src="assets/js/internal-links.js"></script>
+
 
 </body>
 </html>
