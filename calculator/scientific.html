@@ -2,121 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Scientific Calculator | Advanced Math Online</title>
-  <meta name="description" content="Free online scientific calculator with trigonometry, logarithms, powers, and advanced math functions." />
-  <link rel="canonical" href="https://yourusername.github.io/calculator-suite/calculators/scientific.html" />
-
+  <title>Scientific Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="../assets/css/variables.css" />
-  <link rel="stylesheet" href="../assets/css/base.css" />
-  <link rel="stylesheet" href="../assets/css/calculator.css" />
-
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What functions does the scientific calculator support?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It supports trigonometry, logarithms, powers, square roots, and constants like PI."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this scientific calculator accurate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, it uses standard mathematical functions and safe parsing logic."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Application Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Scientific Calculator",
-    "applicationCategory": "CalculatorApplication",
-    "operatingSystem": "All",
-    "description": "Online scientific calculator for advanced mathematical calculations."
-  }
-  </script>
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/calculator.css">
 </head>
 
 <body>
 
-<main class="calculator" aria-label="Scientific Calculator">
-  <div id="display" class="display" aria-live="polite">0</div>
+<header class="app-header">
+  <h1>
+    <a href="../index.html">Calculator Suite</a> →
+    Scientific Calculator
+  </h1>
+</header>
 
- <div class="mode-toggle">
-  <button id="degBtn" class="active">DEG</button>
-  <button id="radBtn">RAD</button>
-</div>
+<nav class="app-nav">
+  <a href="basic.html">Basic</a>
+  <a href="scientific.html" aria-current="page">Scientific</a>
+  <a href="loan.html">Loan</a>
+  <a href="unit.html">Unit</a>
+  <a href="percentage.html">Percentage</a>
+  <a href="bmi.html">BMI</a>
+</nav>
 
-<div class="keys scientific">
-  <button data-mem="MC">MC</button>
-  <button data-mem="MR">MR</button>
-  <button data-mem="M+">M+</button>
-  <button data-mem="M-">M-</button>
+<main class="calculator scientific">
 
-  <button data-fn="sin">sin</button>
-  <button data-fn="cos">cos</button>
-  <button data-fn="tan">tan</button>
-  <button data-fn="asin">sin⁻¹</button>
+  <div id="display" class="display">0</div>
 
-  <button data-fn="acos">cos⁻¹</button>
-  <button data-fn="atan">tan⁻¹</button>
-  <button data-fn="log">log</button>
-  <button data-fn="ln">ln</button>
+  <div class="mode-toggle">
+    <button id="deg" class="active">DEG</button>
+    <button id="rad">RAD</button>
+  </div>
 
-  <button data-fn="pow">xʸ</button>
-  <button data-fn="square">x²</button>
-  <button data-fn="sqrt">√</button>
-  <button data-fn="cbrt">∛</button>
+  <!-- MEMORY -->
+  <div class="keys memory">
+    <button data-mem="MC">MC</button>
+    <button data-mem="MR">MR</button>
+    <button data-mem="M+">M+</button>
+    <button data-mem="M-">M-</button>
+  </div>
 
-  <button data-fn="exp">eˣ</button>
-  <button data-fn="tenpow">10ˣ</button>
-  <button data-const="pi">π</button>
-  <button data-const="e">e</button>
+  <!-- FUNCTIONS -->
+  <div class="keys functions">
+    <button data-fn="sin">sin</button>
+    <button data-fn="cos">cos</button>
+    <button data-fn="tan">tan</button>
+    <button data-fn="asin">sin⁻¹</button>
+    <button data-fn="acos">cos⁻¹</button>
+    <button data-fn="atan">tan⁻¹</button>
+    <button data-fn="log">log</button>
+    <button data-fn="ln">ln</button>
+    <button data-fn="square">x²</button>
+    <button data-fn="inv">1/x</button>
+    <button data-fn="sqrt">√</button>
+    <button data-fn="pow">xʸ</button>
+  </div>
 
-  <button>(</button><button>)</button>
-  <button>7</button><button>8</button><button>9</button>
-  <button class="operator">÷</button>
+  <!-- MAIN PAD -->
+  <div class="keys main">
+    <button>(</button>
+    <button>)</button>
+    <button id="clear">C</button>
+    <button class="op">÷</button>
 
-  <button>4</button><button>5</button><button>6</button>
-  <button class="operator">×</button>
+    <button>7</button><button>8</button><button>9</button>
+    <button class="op">×</button>
 
-  <button>1</button><button>2</button><button>3</button>
-  <button class="operator">−</button>
+    <button>4</button><button>5</button><button>6</button>
+    <button class="op">−</button>
 
-  <button>0</button><button>.</button>
-  <button id="back">⌫</button>
-  <button class="operator">+</button>
+    <button>1</button><button>2</button><button>3</button>
+    <button class="op">+</button>
 
-  <button id="clear">C</button>
-  <button class="equals">=</button>
-</div>
+    <button>0</button>
+    <button>.</button>
+    <button id="back">⌫</button>
+    <button id="equals">=</button>
+  </div>
 
 </main>
 
-<section id="scientificLongForm" class="seo-longform"></section>
+<footer class="app-footer">
+  <section class="footer-grid">
+    <div>
+      <h4>Scientific Calculator</h4>
+      <p>Advanced math calculator with professional-grade accuracy.</p>
+    </div>
+  </section>
+</footer>
 
 <script src="../assets/js/calculators/scientific.js"></script>
-
-<script type="module">
-  import { scientificCalculatorLongForm } from '../assets/js/content/scientific-content.js';
-  document.getElementById('scientificLongForm').innerHTML = scientificCalculatorLongForm;
-</script>
-
-<script src="../assets/js/internal-links.js"></script>
-
 </body>
 </html>
