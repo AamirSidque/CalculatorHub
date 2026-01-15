@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BMI Calculator | Body Mass Index Calculator</title>
+  <meta name="description" content="Free BMI calculator to check body mass index using height and weight. Supports metric and imperial units with health categories." />
+  <link rel="canonical" href="https://yourusername.github.io/calculator-suite/calculators/bmi.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/calculator.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is BMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMI stands for Body Mass Index and is a measure used to assess body weight relative to height."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BMI an accurate health indicator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMI is a general screening tool and does not directly measure body fat or overall health."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Application Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BMI Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "description": "BMI calculator for metric and imperial units with health classification."
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="app-header">
+  <h1>
+    <a href="../index.html">Calculator Suite</a> →
+    <a href="bmi.html">BMI Calculator</a>
+  </h1>
+</header>
+
+<nav class="app-nav">
+  <a href="basic.html">Basic</a>
+  <a href="scientific.html">Scientific</a>
+  <a href="loan.html">Loan / EMI</a>
+  <a href="unit.html">Unit Converter</a>
+  <a href="percentage.html">Percentage</a>
+  <a href="bmi.html" aria-current="page">BMI</a>
+</nav>
+
+<main class="calculator bmi" aria-label="BMI Calculator">
+
+  <h2>Body Mass Index (BMI) Calculator</h2>
+
+  <label>
+    Unit System
+    <select id="unit">
+      <option value="metric">Metric (kg, cm)</option>
+      <option value="imperial">Imperial (lb, in)</option>
+    </select>
+  </label>
+
+  <label>
+    Weight
+    <input type="number" id="weight" placeholder="Enter weight">
+  </label>
+
+  <label>
+    Height
+    <input type="number" id="height" placeholder="Enter height">
+  </label>
+
+  <button id="calculateBMI">Calculate BMI</button>
+
+  <div class="loan-results">
+    <p><strong>BMI:</strong> <span id="bmiValue">—</span></p>
+    <p><strong>Category:</strong> <span id="bmiCategory">—</span></p>
+  </div>
+
+</main>
+
+<section id="bmiLongForm" class="seo-longform"></section>
+
+<footer class="app-footer">
+  <section class="footer-grid">
+    <div>
+      <h4>Calculator Suite</h4>
+      <p>Accurate calculators for health, finance, and daily life.</p>
+    </div>
+
+    <div>
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="basic.html">Basic Calculator</a></li>
+        <li><a href="scientific.html">Scientific Calculator</a></li>
+        <li><a href="loan.html">Loan / EMI Calculator</a></li>
+        <li><a href="unit.html">Unit Converter</a></li>
+        <li><a href="percentage.html">Percentage Calculator</a></li>
+        <li><a href="bmi.html">BMI Calculator</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>About</h4>
+      <p id="footerYear"></p>
+    </div>
+  </section>
+</footer>
+
+<script src="../assets/js/calculators/bmi.js"></script>
+
+<script type="module">
+  import { bmiCalculatorLongForm } from '../assets/js/content/bmi-content.js';
+  document.getElementById('bmiLongForm').innerHTML = bmiCalculatorLongForm;
+</script>
+
+<script src="../assets/js/internal-links.js"></script>
+
+<script>
+  document.getElementById('footerYear').textContent =
+    `© ${new Date().getFullYear()} Calculator Suite`;
+</script>
+
+</body>
+</html>
