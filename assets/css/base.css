@@ -18,3 +18,20 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
+.app-footer {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.footer-grid h4 {
+  margin-bottom: 0.5rem;
+}
+
