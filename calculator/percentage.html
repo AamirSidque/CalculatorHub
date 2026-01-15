@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Percentage Calculator | Percentage Increase, Decrease & More</title>
+  <meta name="description" content="Free online percentage calculator to calculate percentage increase, decrease, difference, and reverse percentages accurately." />
+  <link rel="canonical" href="https://yourusername.github.io/calculator-suite/calculators/percentage.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/calculator.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate percentage increase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Percentage increase is calculated by dividing the increase by the original value and multiplying by 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this calculator find reverse percentages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it can calculate the original value before a percentage change."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Application Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Percentage Calculator",
+    "applicationCategory": "CalculatorApplication",
+    "operatingSystem": "All",
+    "description": "Advanced percentage calculator for increase, decrease, difference, and reverse calculations."
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="app-header">
+  <h1>
+    <a href="../index.html">Calculator Suite</a> →
+    <a href="percentage.html">Percentage Calculator</a>
+  </h1>
+</header>
+
+<nav class="app-nav">
+  <a href="basic.html">Basic</a>
+  <a href="scientific.html">Scientific</a>
+  <a href="loan.html">Loan / EMI</a>
+  <a href="unit.html">Unit Converter</a>
+  <a href="percentage.html" aria-current="page">Percentage</a>
+</nav>
+
+<main class="calculator percentage" aria-label="Percentage Calculator">
+
+  <h2>Percentage Calculator</h2>
+
+  <label>
+    Value A
+    <input type="number" id="valueA" placeholder="e.g. 200">
+  </label>
+
+  <label>
+    Value B / Percentage
+    <input type="number" id="valueB" placeholder="e.g. 15">
+  </label>
+
+  <label>
+    Calculation Type
+    <select id="type">
+      <option value="percentOf">What is % of a number</option>
+      <option value="increase">Percentage Increase</option>
+      <option value="decrease">Percentage Decrease</option>
+      <option value="difference">Percentage Difference</option>
+      <option value="reverse">Reverse Percentage</option>
+    </select>
+  </label>
+
+  <button id="calculate">Calculate</button>
+
+  <div class="loan-results">
+    <p><strong>Result:</strong> <span id="result">—</span></p>
+  </div>
+
+</main>
+
+<section id="percentageLongForm" class="seo-longform"></section>
+
+<footer class="app-footer">
+  <section class="footer-grid">
+    <div>
+      <h4>Calculator Suite</h4>
+      <p>Professional online calculators for real-world use.</p>
+    </div>
+
+    <div>
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="basic.html">Basic Calculator</a></li>
+        <li><a href="scientific.html">Scientific Calculator</a></li>
+        <li><a href="loan.html">Loan / EMI Calculator</a></li>
+        <li><a href="unit.html">Unit Converter</a></li>
+        <li><a href="percentage.html">Percentage Calculator</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>About</h4>
+      <p id="footerYear"></p>
+    </div>
+  </section>
+</footer>
+
+<script src="../assets/js/calculators/percentage.js"></script>
+
+<script type="module">
+  import { percentageCalculatorLongForm } from '../assets/js/content/percentage-content.js';
+  document.getElementById('percentageLongForm').innerHTML = percentageCalculatorLongForm;
+</script>
+
+<script src="../assets/js/internal-links.js"></script>
+
+<script>
+  document.getElementById('footerYear').textContent =
+    `© ${new Date().getFullYear()} Calculator Suite`;
+</script>
+
+</body>
+</html>
