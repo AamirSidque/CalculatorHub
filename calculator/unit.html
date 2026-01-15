@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unit Converter | Length, Weight, Temperature, Data & More</title>
+  <meta name="description" content="Free online unit converter for length, weight, volume, temperature, data storage, speed, energy, pressure and more." />
+  <link rel="canonical" href="https://yourusername.github.io/calculator-suite/calculators/unit.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/calculator.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What units does this converter support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It supports all major international units including SI, Imperial, US Customary, and scientific units."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the unit converter work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all conversions work fully offline."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Application Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Unit Converter",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Comprehensive unit converter supporting all major measurement systems."
+  }
+  </script>
+</head>
+
+<body>
+
+<main class="calculator unit" aria-label="Unit Converter">
+
+  <h2>Unit Converter</h2>
+
+  <label>
+    Category
+    <select id="category"></select>
+  </label>
+
+  <label>
+    From
+    <select id="fromUnit"></select>
+  </label>
+
+  <label>
+    To
+    <select id="toUnit"></select>
+  </label>
+
+  <label>
+    Value
+    <input type="number" id="inputValue" placeholder="Enter value">
+  </label>
+
+  <button id="convert">Convert</button>
+
+  <div class="loan-results">
+    <p><strong>Result:</strong> <span id="result">—</span></p>
+  </div>
+
+</main>
+
+<section id="unitLongForm" class="seo-longform"></section>
+
+<script src="../assets/js/calculators/unit.js"></script>
+
+<script type="module">
+  import { unitLongFormContent } from '../assets/js/content/unit-content.js';
+  document.getElementById('unitLongForm').innerHTML = unitLongFormContent;
+</script>
+
+<script src="../assets/js/internal-links.js"></script>
+
+</body>
+</html>
