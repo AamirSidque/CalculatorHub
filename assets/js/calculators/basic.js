@@ -29,3 +29,7 @@ keys.addEventListener('click', e => {
   expression += value;
   display.textContent = expression;
 });
+
+document.getElementById('footerYear').textContent =
+  `© ${new Date().getFullYear()} Calculator Suite`;
+
