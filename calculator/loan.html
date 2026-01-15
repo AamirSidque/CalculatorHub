@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Loan EMI Calculator | Monthly EMI & Amortization</title>
+  <meta name="description" content="Calculate loan EMI with full amortization schedule. Supports home loan, personal loan, and car loan planning." />
+  <link rel="canonical" href="https://yourusername.github.io/calculator-suite/calculators/loan.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/calculator.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is EMI calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EMI is calculated using loan amount, interest rate, and tenure using a standard financial formula."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this EMI calculator show amortization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it provides a complete month-wise amortization schedule."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Application Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Loan EMI Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "description": "Loan EMI calculator with full amortization schedule."
+  }
+  </script>
+</head>
+
+<body>
+
+<main class="calculator loan" aria-label="Loan EMI Calculator">
+
+  <h2>Loan / EMI Calculator</h2>
+
+  <label>
+    Loan Amount
+    <input type="number" id="amount" placeholder="e.g. 500000">
+  </label>
+
+  <label>
+    Interest Rate (% per year)
+    <input type="number" id="rate" step="0.01" placeholder="e.g. 8.5">
+  </label>
+
+  <label>
+    Loan Tenure (Years)
+    <input type="number" id="years" placeholder="e.g. 20">
+  </label>
+
+  <button id="calculate">Calculate EMI</button>
+
+  <div class="loan-results">
+    <p><strong>Monthly EMI:</strong> <span id="emi">—</span></p>
+    <p><strong>Total Interest:</strong> <span id="interest">—</span></p>
+    <p><strong>Total Payment:</strong> <span id="total">—</span></p>
+  </div>
+
+</main>
+
+<section id="amortizationSection">
+  <h3>Loan Amortization Schedule</h3>
+  <div class="table-wrapper">
+    <table id="amortizationTable">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>EMI</th>
+          <th>Principal</th>
+          <th>Interest</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="loanLongForm" class="seo-longform"></section>
+
+<script src="../assets/js/calculators/loan.js"></script>
+
+<script type="module">
+  import { loanCalculatorLongForm } from '../assets/js/content/loan-content.js';
+  document.getElementById('loanLongForm').innerHTML = loanCalculatorLongForm;
+</script>
+
+<script src="../assets/js/internal-links.js"></script>
+
+</body>
+</html>
