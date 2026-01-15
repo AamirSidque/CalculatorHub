@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <title>Basic Calculator</title>
   <meta name="description" content="Simple and accurate basic calculator.">
-  <link rel="stylesheet" href="../assets/css/variables.css">
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="../assets/css/calculator.css">
+ <link rel="preload" href="../assets/css/critical.css" as="style" onload="this.rel='stylesheet'">
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../assets/css/layout.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../assets/css/calculator.css" media="print" onload="this.media='all'">
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
