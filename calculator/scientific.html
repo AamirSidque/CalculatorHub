@@ -86,6 +86,8 @@
 
 </main>
 
+<section id="scientificLongForm" class="seo-longform"></section>
+
 <footer class="app-footer">
   <section class="footer-grid">
     <div>
@@ -96,5 +98,12 @@
 </footer>
 
 <script src="../assets/js/calculators/scientific.js"></script>
+  <script type="module">
+  import { scientificCalculatorLongForm } from '../assets/js/content/scientific-content.js';
+  document.getElementById('scientificLongForm').innerHTML = scientificCalculatorLongForm;
+</script>
+
+  <script src="../assets/js/internal-links.js"></script>
+
 </body>
 </html>
