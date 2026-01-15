@@ -49,6 +49,23 @@
 </head>
 <body>
 
+  <header class="app-header">
+  <h1>
+    <a href="../index.html">Calculator Suite</a> →
+    Scientific Calculator
+  </h1>
+</header>
+
+<nav class="app-nav">
+  <a href="basic.html">Basic</a>
+  <a href="scientific.html" aria-current="page">Scientific</a>
+  <a href="loan.html">Loan / EMI</a>
+  <a href="unit.html">Unit</a>
+  <a href="percentage.html">Percentage</a>
+  <a href="bmi.html">BMI</a>
+</nav>
+
+
 <main class="calculator" aria-label="Basic Calculator">
   <div id="display" class="display" aria-live="polite">0</div>
   <div class="keys">
@@ -95,12 +112,12 @@
 
 
 
-<script src="../assets/js/calculators/basic.js"></script>
-  <script type="module">
+<script src="../assets/js/calculators/basic.js" defer></script>
+  <script type="module" defer>
   import { basicCalculatorLongForm } from '../assets/js/content/basic-content.js';
   document.getElementById('basicLongForm').innerHTML = basicCalculatorLongForm;
 </script>
-<script src="assets/js/internal-links.js"></script>
+<script src="assets/js/internal-links.js" defer></script>
 
 </body>
 </html>
