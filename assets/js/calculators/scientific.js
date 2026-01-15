@@ -1,14 +1,15 @@
 const display = document.getElementById("display");
-const keys = document.querySelector(".keys");
-const degBtn = document.getElementById("degBtn");
-const radBtn = document.getElementById("radBtn");
+const buttons = document.querySelectorAll(".keys button");
+const degBtn = document.getElementById("deg");
+const radBtn = document.getElementById("rad");
 
 let expr = "";
 let memory = 0;
 let isDegree = true;
+let awaitingPower = false;
 
-const toRad = x => (isDegree ? x * Math.PI / 180 : x);
-const fromRad = x => (isDegree ? x * 180 / Math.PI : x);
+const toRad = v => isDegree ? v * Math.PI / 180 : v;
+const fromRad = v => isDegree ? v * 180 / Math.PI : v;
 
 degBtn.onclick = () => {
   isDegree = true;
@@ -22,75 +23,73 @@ radBtn.onclick = () => {
   degBtn.classList.remove("active");
 };
 
-const fns = {
-  sin: x => Math.sin(toRad(x)),
-  cos: x => Math.cos(toRad(x)),
-  tan: x => Math.tan(toRad(x)),
-  asin: x => fromRad(Math.asin(x)),
-  acos: x => fromRad(Math.acos(x)),
-  atan: x => fromRad(Math.atan(x)),
-  log: x => Math.log10(x),
-  ln: x => Math.log(x),
-  sqrt: x => Math.sqrt(x),
-  cbrt: x => Math.cbrt(x),
-  square: x => x * x,
-  exp: x => Math.exp(x),
-  tenpow: x => Math.pow(10, x)
-};
+function calculate(fn, v) {
+  switch (fn) {
+    case "sin": return Math.sin(toRad(v));
+    case "cos": return Math.cos(toRad(v));
+    case "tan": return Math.tan(toRad(v));
+    case "asin": return fromRad(Math.asin(v));
+    case "acos": return fromRad(Math.acos(v));
+    case "atan": return fromRad(Math.atan(v));
+    case "log": return Math.log10(v);
+    case "ln": return Math.log(v);
+    case "square": return v * v;
+    case "sqrt": return Math.sqrt(v);
+    case "inv": return 1 / v;
+  }
+}
 
-keys.addEventListener("click", e => {
-  const b = e.target;
-  if (!b.matches("button")) return;
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => handleInput(btn));
+});
 
-  if (b.id === "clear") {
+function handleInput(btn) {
+  const text = btn.textContent;
+
+  if (btn.dataset.mem) {
+    const val = parseFloat(display.textContent) || 0;
+    if (btn.dataset.mem === "MC") memory = 0;
+    if (btn.dataset.mem === "MR") expr += memory;
+    if (btn.dataset.mem === "M+") memory += val;
+    if (btn.dataset.mem === "M-") memory -= val;
+    display.textContent = expr || memory;
+    return;
+  }
+
+  if (btn.dataset.fn) {
+    const val = parseFloat(display.textContent);
+    if (btn.dataset.fn === "pow") {
+      awaitingPower = true;
+      expr = val + "**";
+      display.textContent = expr;
+      return;
+    }
+    const res = calculate(btn.dataset.fn, val);
+    expr = res.toString();
+    display.textContent = expr;
+    return;
+  }
+
+  if (btn.id === "clear") {
     expr = "";
     display.textContent = "0";
     return;
   }
 
-  if (b.id === "back") {
+  if (btn.id === "back") {
     expr = expr.slice(0, -1);
     display.textContent = expr || "0";
     return;
   }
 
-  if (b.dataset.mem) {
-    const val = parseFloat(display.textContent) || 0;
-    if (b.dataset.mem === "MC") memory = 0;
-    if (b.dataset.mem === "MR") expr += memory;
-    if (b.dataset.mem === "M+") memory += val;
-    if (b.dataset.mem === "M-") memory -= val;
-    display.textContent = expr || memory;
-    return;
-  }
-
-  if (b.dataset.const) {
-    expr += b.dataset.const === "pi" ? Math.PI : Math.E;
-    display.textContent = expr;
-    return;
-  }
-
-  if (b.dataset.fn) {
-    try {
-      const val = parseFloat(expr);
-      const result = fns[b.dataset.fn](val);
-      expr = result.toString();
-      display.textContent = expr;
-    } catch {
-      display.textContent = "Error";
-      expr = "";
-    }
-    return;
-  }
-
-  if (b.textContent === "=") {
+  if (btn.id === "equals") {
     try {
       const safe = expr
         .replace(/×/g, "*")
         .replace(/÷/g, "/")
         .replace(/−/g, "-");
-      const result = Function(`"use strict";return (${safe})`)();
-      expr = result.toString();
+      const res = Function(`"use strict";return (${safe})`)();
+      expr = res.toString();
       display.textContent = expr;
     } catch {
       display.textContent = "Error";
@@ -99,6 +98,18 @@ keys.addEventListener("click", e => {
     return;
   }
 
-  expr += b.textContent;
+  expr += text;
   display.textContent = expr;
+}
+document.addEventListener("keydown", e => {
+  if (/[0-9.]/.test(e.key)) append(e.key);
+  if (["+", "-", "*", "/"].includes(e.key)) append(e.key);
+  if (e.key === "Enter") document.getElementById("equals").click();
+  if (e.key === "Backspace") document.getElementById("back").click();
+  if (e.key === "Escape") document.getElementById("clear").click();
 });
+
+function append(val) {
+  expr += val;
+  display.textContent = expr;
+}
