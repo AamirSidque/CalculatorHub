@@ -8,10 +8,12 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="../assets/css/variables.css">
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="../assets/css/layout.css">
-  <link rel="stylesheet" href="../assets/css/calculator.css">
+ <link rel="preload" href="../assets/css/critical.css" as="style" onload="this.rel='stylesheet'">
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../assets/css/layout.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../assets/css/calculator.css" media="print" onload="this.media='all'">
+
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
