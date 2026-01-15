@@ -5,10 +5,12 @@
   <title>Scientific Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="../assets/css/variables.css">
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="../assets/css/layout.css">
-  <link rel="stylesheet" href="../assets/css/calculator.css">
+  <link rel="preload" href="../assets/css/critical.css" as="style" onload="this.rel='stylesheet'">
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../assets/css/layout.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../assets/css/calculator.css" media="print" onload="this.media='all'">
+
 </head>
 
 <body>
@@ -119,13 +121,13 @@
   </section>
 </footer>
 
-<script src="../assets/js/calculators/scientific.js"></script>
-  <script type="module">
+<script src="../assets/js/calculators/scientific.js" defer></script>
+  <script type="module" defer>
   import { scientificCalculatorLongForm } from '../assets/js/content/scientific-content.js';
   document.getElementById('scientificLongForm').innerHTML = scientificCalculatorLongForm;
 </script>
 
-  <script src="../assets/js/internal-links.js"></script>
+  <script src="../assets/js/internal-links.js" defer></script>
 
 </body>
 </html>
