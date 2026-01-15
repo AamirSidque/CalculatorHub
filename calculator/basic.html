@@ -10,6 +10,31 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the basic calculator accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it uses standard arithmetic logic and safe evaluation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator on mobile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it is fully responsive and touch-optimized."
+      }
+    }
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Basic Calculator",
   "applicationCategory": "CalculatorApplication",
@@ -32,44 +57,8 @@
   </div>
 </main>
 
-  <section class="calculator-content">
-  <article>
-    <h2>About the Basic Calculator</h2>
-    <p>
-      The Basic Calculator is designed for everyday arithmetic operations such as
-      addition, subtraction, multiplication, and division. It behaves like a
-      physical handheld calculator and provides instant, accurate results.
-    </p>
-  </article>
-
-  <article>
-    <h3>Supported Operations</h3>
-    <ul>
-      <li>Addition (+)</li>
-      <li>Subtraction (−)</li>
-      <li>Multiplication (×)</li>
-      <li>Division (÷)</li>
-    </ul>
-  </article>
-
-  <article>
-    <h3>Real-World Use Cases</h3>
-    <p>
-      This calculator is ideal for quick calculations such as shopping totals,
-      expense tracking, classroom learning, and office work.
-    </p>
-  </article>
-
-  <article class="faq">
-    <h3>Frequently Asked Questions</h3>
-
-    <h4>Is this calculator accurate?</h4>
-    <p>Yes. All calculations use standard JavaScript numeric precision.</p>
-
-    <h4>Does it work offline?</h4>
-    <p>Yes. Once loaded, the calculator works without internet access.</p>
-  </article>
-</section>
+ 
+<section id="basicLongForm" class="seo-longform"></section>
 
   <footer class="app-footer">
   <section class="footer-grid">
@@ -104,5 +93,11 @@
 
 
 <script src="../assets/js/calculators/basic.js"></script>
+  <script type="module">
+  import { basicCalculatorLongForm } from '../assets/js/content/basic-content.js';
+  document.getElementById('basicLongForm').innerHTML = basicCalculatorLongForm;
+</script>
+<script src="assets/js/internal-links.js"></script>
+
 </body>
 </html>
